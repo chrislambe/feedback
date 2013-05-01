@@ -1,0 +1,17 @@
+%p#notice= notice
+
+%p
+  %strong Name:
+  = @user.name
+%p
+  %strong Email:
+  = @user.email
+%p
+  %strong Submissions:
+  %ul
+    - @user.submissions.each do |submission|
+      %li= submission.body
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path
