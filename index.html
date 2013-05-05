@@ -1,1 +1,152 @@
-Feedback
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Tech Talk: Ruby on Rails</title>
+  </head>
+  <body>
+    <div>
+      <!-- <h2>chris lambe presents</h2> -->
+      <!-- <h2>a chris lambe production</h2> -->
+      <h1>Instruction Musings on<br/>Ruby on Rails</h1>
+      <!-- <h2>by chris lambe</h2> -->
+    </div>
+    <div>
+      <h2>What is Ruby?</h2>
+      <ul>
+        <li>Programming language</li>
+        <li>Object-oriented</li>
+        <li>Dynamic/duck typing</li>
+        <li>Package/library management via RubyGems</li>
+        <li>Many implementations including JIT and pre-compiling</li>
+        <li>
+          Focused on programmer productivity and enjoyment:
+          <q cite="http://en.wikipedia.org/wiki/Ruby_(programming_language)#Philosophy">...we need to focus on humans, on how humans care about doing programming or operating the application of the machines. We are the masters. [Machines] are the slaves.</q>
+        </li>
+        <li>Seriously it's awesome</li>
+      </ul>
+      <h2>What is Rails?</h2>
+      <ul>
+        <li>Ruby framework
+          <ul>
+            <li>Rails:Ruby::CodeIgniter:PHP</li>
+            <li>Rails:Ruby::Wicket:Java</li>
+            <li>Rails:Ruby::Django:Python</li>
+          </ul>
+        </li>
+        <li>"Convention over configuration"</li>
+        <li>MVC</li>
+        <li>ORM (ActiveRecord)</li>
+        <li>Routing</li>
+        <li>RESTful</li>
+      </ul>
+    </div>
+    <div>
+      <h2>The ubiquitous Rails demo: Let's build an app!</h2>
+      <h3>Feeback: The Web App</h3>
+      <h4>Step-by-step</h4>
+      <ol>
+        <li>Application architecture (it ain't gonna plan itself)</li>
+        <li>Lay the groundwork</li>
+        <li>Generate resources</li>
+        <li>Fix funky output in the generated code</li>
+        <li>Make it usable</li>
+        <li>Tell us when we get feedback</li>
+        <li>Deploy it</li>
+      </ol>
+    </div>
+    <div>
+      <h2>Application architecture (it ain't gonna plan itself)</h2>
+      <ul>
+        <li>User
+          <ul>
+            <li>name:<em>string</em></li>
+            <li>email:<em>string</em></li>
+          </ul>
+        </li>
+        <li>Submission
+          <ul>
+            <li>user:<em>references</em></li>
+            <li>body:<em>text</em></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2>Lay the groundwork</h2>
+      <ol>
+        <!-- Install the Rails gem via RubyGems -->
+        <li><code class="bash">gem install rails</code></li>
+        <!-- Generate the Rails application boilerplate -->
+        <li><code class="bash">rails new .</code></li>
+        <li>
+          Add <code>rails haml</code> gem to our Gemfile and run:
+          <!-- Install any gems that weren't installed when we install Rails -->
+          <code class="bash">bundle install</code>
+        </li>
+      </ol>
+    </div>
+    <div>
+      <h2>Generate resources</h2>
+      <ol start="4">
+        <!-- Generate model, views, controller, tests, assets, migration and route for users -->
+        <li><code class="bash">rails g scaffold User name:string email:string</code></li>
+        <!-- Generate model, views, controller, tests, assets, migration and route for submissions -->
+        <li><code class="bash">rails g scaffold Submission user:references body:text</code></li>
+        <!-- Run the migrations to create the necessary tables in the database -->
+        <li><code class="bash">rake db:migrate</code></li>
+        <!-- Run the app! -->
+      </ol>
+    </div>
+    <div>
+      <h2>Fix funky output in the generated code</h2>
+      <ol start="7">
+        <li>Change the User reference to a dropdown list in the Submission form</li>
+        <li>Change User#index and User#show to display User.name instead of just User</li>
+      </ol>
+    </div>
+    <div>
+      <h2>Make it usable</h2>
+      <ol start="9">
+        <li>Add navigation</li>
+        <li>Add per-user submission lists</li>
+      </ol>
+    </div>
+    <div>
+      <h2>Tell us when we get feedback</h2>
+      <ol start="11">
+        <li>Tell ActionMailer to use sendmail</li>
+        <li><code class="bash">rails g mailer SubmissionMailer</code></li>
+        <li>Create submission notification method</li>
+        <li>Create submission notification view</li>
+        <li>Implement submission notification on SubmissionController#create</li>
+      </ol>
+    </div>
+    <div>
+      <h2>Deploy it</h2>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
