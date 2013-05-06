@@ -1,0 +1,93 @@
+.app-step ol,
+.app-step ul
+{
+  /*display:none;*/
+}
+
+.app-step.present ol,
+.app-step.present ul
+{
+  /*display:block;*/
+}
+
+
+body.impress-on-splash .step {opacity:0;}
+body.impress-on-title .step {opacity:0;}
+
+#splash.step {opacity:0;}
+#title.step {opacity:0;}
+body.impress-on-splash #splash.step {opacity:1;}
+body.impress-on-title #title.step {opacity:1;}
+
+.step
+{
+  height:400px;
+  width:800px;
+  transition:opacity 1s
+}
+
+#splash.step
+{
+  height:auto;
+  width:auto;
+}
+
+#what-is-ruby,
+#what-is-rails
+{
+  box-sizing:border-box;
+  width:50%;
+  padding-right:5%;
+  float:left;
+}
+
+.app-step
+{
+  height:400px;
+  width:800px;
+  padding-left:250px;
+  box-sizing:border-box;
+  opacity:0.15;
+}
+
+.app-step.active
+{
+  opacity:1;
+}
+
+#app-steps
+{
+  opacity:0;
+  transition:opacity 1s;
+  width:800px;
+  height:400px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-200px;
+  margin-left:-400px;
+  padding-right:600px;
+  box-sizing:border-box;
+}
+
+body.impress-on-application-architecture #app-steps,
+body.impress-on-lay-the-groundwork #app-steps,
+body.impress-on-generate-resources #app-steps,
+body.impress-on-fix-output #app-steps,
+body.impress-on-make-it-usable #app-steps,
+body.impress-on-implement-notifications #app-steps,
+body.impress-on-deploy-it #app-steps
+{
+  opacity:1;
+}
+
+body.impress-on-application-architecture #app-steps li a[href="#application-architecture"],
+body.impress-on-lay-the-groundwork #app-steps li a[href="#lay-the-groundwork"],
+body.impress-on-generate-resources #app-steps li a[href="#generate-resources"],
+body.impress-on-fix-output #app-steps li a[href="#fix-output"],
+body.impress-on-make-it-usable #app-steps li a[href="#make-it-usable"],
+body.impress-on-implement-notifications #app-steps li a[href="#implement-notifications"],
+body.impress-on-deploy-it #app-steps li a[href="#deploy-it"]
+{
+  color:green;
+}
