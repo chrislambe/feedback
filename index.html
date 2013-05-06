@@ -6,6 +6,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' />
     <link rel="stylesheet" href="stylesheets/presentation.css" />
+    <link rel="icon" type="image/png" href="favicon.png">
   </head>
   <body class="impress-not-supported">
     <ol id="app-steps">
@@ -15,19 +16,15 @@
       <li class="fix-output"><a href="#fix-output">Fix funky output in the generated code</a></li>
       <li class="make-it-usable"><a href="#make-it-usable">Make it usable</a></li>
       <li class="implement-notifications"><a href="#implement-notifications">Tell us when we get feedback</a></li>
-      <li class="deploy-it"><a href="#deploy-it">Deploy it</a></li>
+      <li class="deploy-it"><a href="#deploy-it">Deploy it to Heroku</a></li>
     </ol>
-    <div id="impress">
+    <div id="impress" data-transition-duration="500">
       <div id="splash" class="step" data-z="-5000">
-        <h1>Escalation Point</h1>
-        <h2>Tech Talks</h2>
+        <img src="images/ep-watermark.png">
       </div>
       <!-- <div>Non step</div> -->
       <div id="title" class="step">
-        <!-- <h2>chris lambe presents</h2> -->
-        <!-- <h2>a chris lambe production</h2> -->
-        <h1>Instructional Musings on<br/>Ruby on Rails</h1>
-        <!-- <h2>by chris lambe</h2> -->
+        <h1><small>Instructional Musings on</small><br/>Ruby on Rails</h1>
       </div>
       <div id="ruby-vs-rails" class="step" data-x="1000">
         <div id="what-is-ruby">
@@ -74,7 +71,7 @@
           <li>Fix funky output in the generated code</li>
           <li>Make it usable</li>
           <li>Tell us when we get feedback</li>
-          <li>Deploy it</li>
+          <li>Deploy it to Heroku</li>
         </ol>
       </div>
       <div id="application-architecture" class="step app-step">
@@ -137,7 +134,7 @@
       <div id="implement-notifications" class="step app-step">
         <h2>Tell us when we get feedback</h2>
         <ol start="11">
-          <li>Tell ActionMailer to use sendmail.</li>
+          <li>Configure ActionMailer for <code class="ruby">:development</code> group.</li>
           <li>Generate an ActionMailer:<br/><code class="bash">rails g mailer SubmissionMailer</code></li>
           <li>Create submission notification method.</li>
           <li>Create submission notification view.</li>
@@ -145,7 +142,21 @@
         </ol>
       </div>
       <div id="deploy-it" class="step app-step">
-        <h2>Deploy it</h2>
+        <h2>Deploy it to Heroku</h2>
+        <ol start="16">
+          <li>Configure Heroku to use SendGrid to send our notifications and update <code class="ruby">:production</code> group config:<br/><code class="bash">heroku addons:add sendgrid:starter</code></li>
+          <li>Move <code class="ruby">sqlite3</code> gem to <code class="ruby">:development</code> group and add <code class="ruby">pg</code> (postgres) gem to the <code class="ruby">:production</code> group.</li>
+          <li>Update your <code>Gemfile.lock</code> file:<br/><code class="bash">bundle install</code></li>
+          <li>Create a new Heroku app:<br/><code class="bash">heroku apps:create tech-talks-feedback</code></li>
+          <li>Push your app to Heroku:<br/><code class="bash">git push heroku master</code></li>
+          <li>Run the database migrations:<br/><code class="bash">heroku run bundle exec rake db:migrate</code></li>
+        </ol>
+      </div>
+      <div id="thanks" class="step" data-z="5000">
+        <h2>Thanks for participating!</h2>
+        <p>The source files for this project are available at <a href="https://github.com/chrislambe/tech-talk-rails">https://github.com/chrislambe/tech-talk-rails</a>. This presentation can be found at <a href="http://chrislambe.github.io/tech-talk-rails">http://chrislambe.github.io/tech-talk-rails</a>.</p>
+        <p>This presentation was assembled with the magic of <a href="https://github.com/bartaz/impress.js">impress.js</a>. Nerd.</p>
+        <p>If you'd like you can send me any feedback you have via the app we just built! For the record it can be found at <a href="http://tech-talks-feedback.herokuapp.com/">http://tech-talks-feedback.herokuapp.com/</a></p>
       </div>
     </div>
     <script src="javascripts/impress.js"></script>

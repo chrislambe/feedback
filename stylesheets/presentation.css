@@ -7,7 +7,7 @@ html,body
 body
 {
   font-family:'Roboto',sans-serif;
-  background-color:#efefef;
+  background:url('../images/background-texture.png') #efefef;
   color:#444;
   box-shadow:0 0 255px rgba(0,0,0,0.25) inset;
 }
@@ -23,6 +23,7 @@ h1,h2,h3,h4,h5,h6
   color:#111;
   margin:0;
   line-height:1em;
+  text-shadow:0 1px 0 #fff;
 }
 
 code
@@ -61,26 +62,18 @@ code.bash:before
   color:#999;
 }
 
-.app-step ol,
-.app-step ul
+.step
 {
-  /*display:none;*/
+  transition:opacity 1s;
+  opacity:0.10;
 }
+.active.step {opacity:1;}
 
-.app-step.present ol,
-.app-step.present ul
+#splash.step
 {
-  /*display:block;*/
+  width:auto;
+  height:auto;
 }
-
-
-body.impress-on-splash .step {opacity:0;}
-body.impress-on-title .step {opacity:0;}
-
-#splash.step {opacity:0;}
-#title.step {opacity:0;}
-body.impress-on-splash #splash.step {opacity:1;}
-body.impress-on-title #title.step {opacity:1;}
 
 .step
 {
@@ -89,12 +82,20 @@ body.impress-on-title #title.step {opacity:1;}
   transition:opacity 1s;
 }
 
-#title.step,
-#splash.step
+#title.step
 {
   text-align:center;
   height:auto;
-  width:400px;
+  width:600px;
+}
+#title.step h1
+{
+  font-size:4em;
+  color:#c0061b;
+}
+#title.step h1 small
+{
+  color:#666;
 }
 
 #what-is-ruby,
@@ -146,7 +147,8 @@ body.impress-on-title #title.step {opacity:1;}
 ol#app-steps
 {
   opacity:0;
-  transition:opacity 1s;
+  visibility:hidden;
+  transition:opacity 0.5s,visibility 0.5s;
   width:200px;
   height:400px;
   position:absolute;
@@ -180,6 +182,7 @@ body.impress-on-implement-notifications #app-steps,
 body.impress-on-deploy-it #app-steps
 {
   opacity:1;
+  visibility:visible;
 }
 
 #app-steps li a
