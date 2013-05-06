@@ -1,3 +1,66 @@
+html,body
+{
+  padding:0;
+  margin:0;
+}
+
+body
+{
+  font-family:'Roboto',sans-serif;
+  background-color:#efefef;
+  color:#444;
+  box-shadow:0 0 255px rgba(0,0,0,0.25) inset;
+}
+
+a
+{
+  text-decoration:none;
+  color:#933;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+  color:#111;
+  margin:0;
+  line-height:1em;
+}
+
+code
+{
+  border-radius:3px;
+  border:1px solid #ccc;
+  background:#ddd;
+  padding:0 4px;
+  color:#444;
+  font-family:'Droid Sans Mono',auto;
+  font-size:14px;  
+}
+
+li
+{
+  margin-bottom:4px;
+  line-height:1.5em;
+}
+
+code.ruby
+{
+  border-color:#dcc;
+  background:#edd;
+  color:#544;
+}
+
+code.bash
+{
+  border-color:#333;
+  background:#444;
+  color:#ddd;
+}
+code.bash:before
+{
+  content:"$ ";
+  color:#999;
+}
+
 .app-step ol,
 .app-step ul
 {
@@ -23,13 +86,15 @@ body.impress-on-title #title.step {opacity:1;}
 {
   height:400px;
   width:800px;
-  transition:opacity 1s
+  transition:opacity 1s;
 }
 
+#title.step,
 #splash.step
 {
+  text-align:center;
   height:auto;
-  width:auto;
+  width:400px;
 }
 
 #what-is-ruby,
@@ -47,7 +112,25 @@ body.impress-on-title #title.step {opacity:1;}
   width:800px;
   padding-left:250px;
   box-sizing:border-box;
-  opacity:0.15;
+  opacity:0;
+}
+
+.app-step h2
+{
+  display:none;
+}
+.app-step ol,
+.app-step ul
+{
+  margin:0;
+}
+.app-step>ol,
+.app-step>ul
+{
+  /*border-radius:5px;*/
+  /*background:#f9f9f9;*/
+  /*padding:20px;*/
+  /*box-shadow:0 1px 3px rgba(0,0,0,0.15);*/
 }
 
 .app-step.active
@@ -55,19 +138,32 @@ body.impress-on-title #title.step {opacity:1;}
   opacity:1;
 }
 
-#app-steps
+ol#app-steps
 {
   opacity:0;
   transition:opacity 1s;
-  width:800px;
+  width:200px;
   height:400px;
   position:absolute;
   top:50%;
   left:50%;
   margin-top:-200px;
   margin-left:-400px;
-  padding-right:600px;
   box-sizing:border-box;
+  z-index:1000;
+}
+
+#app-steps
+{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+#app-steps li
+{
+  padding:5px 0;
+  margin:0;
+  font-weight:700;
 }
 
 body.impress-on-application-architecture #app-steps,
@@ -81,6 +177,20 @@ body.impress-on-deploy-it #app-steps
   opacity:1;
 }
 
+#app-steps li a
+{
+  transition:left 0.5s;
+  position:relative;
+  left:0;
+}
+
+#app-steps li a:after
+{
+  transition:opacity 0.5s;
+  content:" ›";
+  opacity:0;
+}
+
 body.impress-on-application-architecture #app-steps li a[href="#application-architecture"],
 body.impress-on-lay-the-groundwork #app-steps li a[href="#lay-the-groundwork"],
 body.impress-on-generate-resources #app-steps li a[href="#generate-resources"],
@@ -89,5 +199,17 @@ body.impress-on-make-it-usable #app-steps li a[href="#make-it-usable"],
 body.impress-on-implement-notifications #app-steps li a[href="#implement-notifications"],
 body.impress-on-deploy-it #app-steps li a[href="#deploy-it"]
 {
-  color:green;
+  left:10px;
+  color:#111;
+}
+
+body.impress-on-application-architecture #app-steps li a[href="#application-architecture"]:after,
+body.impress-on-lay-the-groundwork #app-steps li a[href="#lay-the-groundwork"]:after,
+body.impress-on-generate-resources #app-steps li a[href="#generate-resources"]:after,
+body.impress-on-fix-output #app-steps li a[href="#fix-output"]:after,
+body.impress-on-make-it-usable #app-steps li a[href="#make-it-usable"]:after,
+body.impress-on-implement-notifications #app-steps li a[href="#implement-notifications"]:after,
+body.impress-on-deploy-it #app-steps li a[href="#deploy-it"]:after
+{
+  opacity:1;
 }

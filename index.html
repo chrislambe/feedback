@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Tech Talk: Ruby on Rails</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' />
     <link rel="stylesheet" href="stylesheets/presentation.css" />
   </head>
   <body class="impress-not-supported">
@@ -16,14 +18,15 @@
       <li class="deploy-it"><a href="#deploy-it">Deploy it</a></li>
     </ol>
     <div id="impress">
-      <div id="splash" class="step" data-rotate-y="-180">
-        splash!
+      <div id="splash" class="step" data-z="-5000">
+        <h1>Escalation Point</h1>
+        <h2>Tech Talks</h2>
       </div>
       <!-- <div>Non step</div> -->
       <div id="title" class="step">
         <!-- <h2>chris lambe presents</h2> -->
         <!-- <h2>a chris lambe production</h2> -->
-        <h1>Instruction Musings on<br/>Ruby on Rails</h1>
+        <h1>Instructional Musings on<br/>Ruby on Rails</h1>
         <!-- <h2>by chris lambe</h2> -->
       </div>
       <div id="ruby-vs-rails" class="step" data-x="1000">
@@ -99,7 +102,7 @@
           <!-- Generate the Rails application boilerplate -->
           <li><code class="bash">rails new .</code></li>
           <li>
-            Add <code>rails haml</code> gem to our Gemfile and run:
+            Add <code class="ruby">rails-haml</code> gem to our Gemfile and run:
             <!-- Install any gems that weren't installed when we install Rails -->
             <code class="bash">bundle install</code>
           </li>
@@ -120,8 +123,8 @@
       <div id="fix-output" class="step app-step">
         <h2>Fix funky output in the generated code</h2>
         <ol start="7">
-          <li>Change the User reference to a dropdown list in the Submission form</li>
-          <li>Change User#index and User#show to display User.name instead of just User</li>
+          <li>Change the <code>User</code> reference to a dropdown list in the <code>Submission</code> form</li>
+          <li>Change <code>User#index</code> and <code>User#show</code> to display <code class="ruby">User.name</code> instead of just <code class="ruby">User</code></li>
         </ol>
       </div>
       <div id="make-it-usable" class="step app-step">
@@ -138,7 +141,7 @@
           <li><code class="bash">rails g mailer SubmissionMailer</code></li>
           <li>Create submission notification method</li>
           <li>Create submission notification view</li>
-          <li>Implement submission notification on SubmissionController#create</li>
+          <li>Implement submission notification on <code>SubmissionController#create</code></li>
         </ol>
       </div>
       <div id="deploy-it" class="step app-step">
