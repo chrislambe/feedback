@@ -55,7 +55,7 @@ Feedback::Application.configure do
     address: "smtpcorp.com",
     port: 2525,
     user_name: "tech.talks.feedback",
-    password: "x?stadre*eguste*_e@r",
+    password: "",
     authentication: :login
   }
 
