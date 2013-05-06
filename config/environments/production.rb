@@ -54,7 +54,7 @@ Feedback::Application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtpcorp.com",
     port: 2525,
-    user_name: "tech-talks-feedback",
+    user_name: "tech.talks.feedback",
     password: "x?stadre*eguste*_e@r",
     authentication: :login
   }
