@@ -98,11 +98,11 @@
         <h2>Lay the groundwork</h2>
         <ol>
           <!-- Install the Rails gem via RubyGems -->
-          <li><code class="bash">gem install rails</code></li>
+          <li>Install Rails gem via RubyGems:<br/><code class="bash">gem install rails</code></li>
           <!-- Generate the Rails application boilerplate -->
-          <li><code class="bash">rails new .</code></li>
+          <li>Generate a new Rails project:<br/><code class="bash">rails new .</code></li>
           <li>
-            Add <code class="ruby">rails-haml</code> gem to our Gemfile and run:
+            Add <code class="ruby">rails-haml</code> gem to our Gemfile and install it:<br/>
             <!-- Install any gems that weren't installed when we install Rails -->
             <code class="bash">bundle install</code>
           </li>
@@ -112,36 +112,36 @@
         <h2>Generate resources</h2>
         <ol start="4">
           <!-- Generate model, views, controller, tests, assets, migration and route for users -->
-          <li><code class="bash">rails g scaffold User name:string email:string</code></li>
+          <li>Generate a RESTful resource for users:<br/><code class="bash">rails g scaffold User name:string email:string</code></li>
           <!-- Generate model, views, controller, tests, assets, migration and route for submissions -->
-          <li><code class="bash">rails g scaffold Submission user:references body:text</code></li>
+          <li>Generate a RESTful resource for feedback submissions:<br/><code class="bash">rails g scaffold Submission user:references body:text</code></li>
           <!-- Run the migrations to create the necessary tables in the database -->
-          <li><code class="bash">rake db:migrate</code></li>
+          <li>Migrate the database to build the necessary tables:<br/><code class="bash">rake db:migrate</code></li>
           <!-- Run the app! -->
         </ol>
       </div>
       <div id="fix-output" class="step app-step">
         <h2>Fix funky output in the generated code</h2>
         <ol start="7">
-          <li>Change the <code>User</code> reference to a dropdown list in the <code>Submission</code> form</li>
-          <li>Change <code>User#index</code> and <code>User#show</code> to display <code class="ruby">User.name</code> instead of just <code class="ruby">User</code></li>
+          <li>Change the <code>User</code> reference to a dropdown list in the <code>Submission</code> form.</li>
+          <li>Change <code>User#index</code> and <code>User#show</code> to display <code class="ruby">User.name</code> instead of just <code class="ruby">User</code>.</li>
         </ol>
       </div>
       <div id="make-it-usable" class="step app-step">
         <h2>Make it usable</h2>
         <ol start="9">
-          <li>Add navigation</li>
-          <li>Add per-user submission lists</li>
+          <li>Add navigation.</li>
+          <li>Add per-user submission lists.</li>
         </ol>
       </div>
       <div id="implement-notifications" class="step app-step">
         <h2>Tell us when we get feedback</h2>
         <ol start="11">
-          <li>Tell ActionMailer to use sendmail</li>
-          <li><code class="bash">rails g mailer SubmissionMailer</code></li>
-          <li>Create submission notification method</li>
-          <li>Create submission notification view</li>
-          <li>Implement submission notification on <code>SubmissionController#create</code></li>
+          <li>Tell ActionMailer to use sendmail.</li>
+          <li>Generate an ActionMailer:<br/><code class="bash">rails g mailer SubmissionMailer</code></li>
+          <li>Create submission notification method.</li>
+          <li>Create submission notification view.</li>
+          <li>Implement submission notification on <code>SubmissionController#create</code>.</li>
         </ol>
       </div>
       <div id="deploy-it" class="step app-step">
