@@ -17,12 +17,14 @@ RVM requires some prerequiste system libraries. I use [Homebrew][homebrew], but 
 
 #### [RVM][rvm] (Ruby enVironment Manager)
 These instructions may not be 100% correct since RVM is constantly changing. Follow any on-screen instructions you see! Run these commands:
-1. `\curl -#L https://get.rvm.io | bash -s stable --autolibs=homebrew`
+
+1. `\curl -#L https://get.rvm.io | bash -s stable --autolibs=3`
 2. `source ~/.rvm/scripts/rvm`
 3. `rvm requirements`
 4. `rvm install 2.0.0`
 
 ### Project environment setup
+
 1. Create a directory for the application. I used `~/Documents/Tech Talks/Ruby on Rails/feedback`.
 2. Create an [RVM gemset][rvm-gemsets] and [.rvmrc][rvm-rvmrc] file in the project directory: 
   1. `cd ~/Documents/Tech\ Talks/Ruby\ on\ Rails/feedback`
