@@ -17,11 +17,19 @@ a
   text-decoration:none;
   color:#933;
 }
+a:hover
+{
+  color:#c66;
+  text-shadow:0 1px 1px #600;
+  position:relative;
+  top:-1px;
+}
 
 h1,h2,h3,h4,h5,h6
 {
   color:#111;
   margin:0;
+  margin-bottom:15px;
   line-height:1em;
   text-shadow:0 1px 0 #fff;
 }
@@ -37,10 +45,56 @@ code
   font-size:14px;  
 }
 
+ul,ol
+{
+  margin:0 0 10px 25px;
+  padding:0;
+}
+
 li
 {
   margin-bottom:4px;
   line-height:1.5em;
+}
+
+q
+{
+  display:block;
+  margin:10px 0;
+  padding:10px 15px;
+  border-radius:5px;
+  background:#f9f9f9;
+  color:#222;
+  box-shadow:0 1px 3px rgba(0,0,0,0.15);
+  position:relative;
+  top:0;
+  left:0;
+  margin-bottom:18px;
+}
+q:after,
+q:before
+{
+  content:" ";
+  border:12px solid #f9f9f9;
+  border-top:none;
+  border-right-color:transparent;
+  border-bottom-color:transparent;
+  border-bottom-width:14px;
+  position:absolute;
+  top:100%;
+  right:20px;
+}
+q:before
+{
+  content:" ";
+  border:16px solid rgba(0,0,0,0.05);
+  border-top:none;
+  border-right-color:transparent;
+  border-bottom-color:transparent;
+  border-bottom-width:18px;
+  position:absolute;
+  top:100%;
+  right:13px;
 }
 
 code.ruby
@@ -65,9 +119,20 @@ code.bash:before
 .step
 {
   transition:opacity 1s;
-  opacity:0.10;
+  opacity:1;
 }
 .active.step {opacity:1;}
+
+#splash
+{
+  position:absolute;
+  bottom:20px;
+  left:20px;
+}
+#splash img
+{
+  width:200px;
+}
 
 #splash.step
 {
@@ -77,7 +142,7 @@ code.bash:before
 
 .step
 {
-  height:400px;
+  height:auto;
   width:800px;
   transition:opacity 1s;
 }
@@ -92,10 +157,30 @@ code.bash:before
 {
   font-size:4em;
   color:#c0061b;
+  color:#e93949;
+  text-shadow:
+  0 1px 0 #bf0f1f,
+  0 2px 0 #b90919,
+  0 3px 0 #af000f,
+  0 4px 0 #a90009,
+  0 5px 0 #9f000f,
+  0 6px 0 #990009,
+  0 6px 6px #393939,
+  0 6px 1px #111;
 }
+
 #title.step h1 small
 {
-  color:#666;
+  color:#898989;
+  text-shadow:
+  0 1px 0 #5f5f5f,
+  0 2px 0 #595959,
+  0 3px 0 #4f4f4f,
+  0 4px 0 #494949,
+  0 5px 0 #3f3f3f,
+  0 6px 0 #393939,
+  0 6px 6px #393939,
+  0 6px 1px #111;
 }
 
 #what-is-ruby,
@@ -116,7 +201,7 @@ code.bash:before
   opacity:0;
 }
 
-.app-step li
+.app-step>ol>li
 {
   margin-bottom:12px;
 }
@@ -129,6 +214,7 @@ code.bash:before
 .app-step ul
 {
   margin:0;
+  padding:0 0 10px 25px;
 }
 .app-step>ol,
 .app-step>ul
@@ -171,6 +257,34 @@ ol#app-steps
   padding:5px 0;
   margin:0;
   font-weight:700;
+}
+
+body.impress-on-application-architecture .step,
+body.impress-on-lay-the-groundwork .step,
+body.impress-on-generate-resources .step,
+body.impress-on-fix-output .step,
+body.impress-on-make-it-usable .step,
+body.impress-on-implement-notifications .step,
+body.impress-on-deploy-it .step,
+body.impress-on-thanks .step
+{
+  opacity:0;
+}
+
+body.impress-on-thanks #thanks.step
+{
+  opacity:1;
+}
+
+body.impress-on-application-architecture .app-step,
+body.impress-on-lay-the-groundwork .app-step,
+body.impress-on-generate-resources .app-step,
+body.impress-on-fix-output .app-step,
+body.impress-on-make-it-usable .app-step,
+body.impress-on-implement-notifications .app-step,
+body.impress-on-deploy-it .app-step
+{
+  opacity:1;
 }
 
 body.impress-on-application-architecture #app-steps,
@@ -220,4 +334,9 @@ body.impress-on-implement-notifications #app-steps li a[href="#implement-notific
 body.impress-on-deploy-it #app-steps li a[href="#deploy-it"]:after
 {
   opacity:1;
+}
+
+#thanks.step
+{
+  width:600px;
 }
