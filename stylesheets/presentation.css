@@ -95,6 +95,9 @@ h1,h2,h3,h4,h5,h6
   text-shadow:0 1px 0 #fff;
   font-family:'Roboto Slab', serif;
 }
+h3 {color:#222;}
+h4 {color:#333;}
+h5,h6 {color:#444;}
 
 ul,ol
 {

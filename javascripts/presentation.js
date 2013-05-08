@@ -16,28 +16,36 @@
 
     impress().init();
 
-    typeCursor = $('<span/>').addClass('text-cursor');
+    if($('body').hasClass('impress-on-title'))
+    {
+      typeCursor = $('<span/>').addClass('text-cursor');
 
-    typeMeElements = $.makeArray($('.type-me'));
-    $(typeMeElements[0]).before(typeCursor);
+      typeMeElements = $.makeArray($('.type-me'));
+      $(typeMeElements[0]).before(typeCursor);
 
-    var introDelay = 2000;
-    introTimeout = setTimeout(function() {
-      // If we let the timeout fire, we don't need the click
-      $('body').off('click');
-      typeMe(typeMeElements.shift());
-    },introDelay);
-    $('#timer-display').animate({width:'0%'},introDelay,'linear');
-
-    // First click kills the auto-type timer
-    $('body').one('click',function(e) {
-      clearTimeout(introTimeout);
-      $('#timer-display').stop().fadeOut('fast');
-      // Second click runs the intro animation
-      $('body').one('click',function(e) {
+      var introDelay = 2000;
+      introTimeout = setTimeout(function() {
+        // If we let the timeout fire, we don't need the click
+        $('body').off('click');
         typeMe(typeMeElements.shift());
+      },introDelay);
+      $('#timer-display').animate({width:'0%'},introDelay,'linear');
+
+      // First click kills the auto-type timer
+      $('body').one('click',function(e) {
+        clearTimeout(introTimeout);
+        $('#timer-display').stop().fadeOut('fast');
+        // Second click runs the intro animation
+        $('body').one('click',function(e) {
+          typeMe(typeMeElements.shift());
+        });
       });
-    });
+    }
+    else
+    {
+      $('.type-me').show();
+      $('#timer-display').hide();
+    }
   });
 
   var typeMe = function(element)
@@ -45,7 +53,7 @@
     var $element = $(element);
     var content = $element.html();
     $element.html('&nbsp;');
-    $element.css('display','inline');
+    $element.show();
 
     var totalTime = 0;
     var i = 0;
