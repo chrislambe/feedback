@@ -47,6 +47,22 @@ body.impress-on-title
   /*background:url('../images/background-texture.png'),linear-gradient(#efefef,#ccc);*/
 }
 
+.type-me {display:none;}
+
+@-webkit-keyframes blink
+{
+  0% {opacity:0;}
+  45% {opacity:0}
+  50% {opacity:1;}
+  95% {opacity:1;}
+  100% {opacity:0;}
+}
+
+.text-cursor {-webkit-animation:blink 1s linear infinite;}
+.text-cursor:before {content:"|";}
+
+.step.past .text-cursor {visibility:hidden;}
+
 a
 {
   text-decoration:none;
