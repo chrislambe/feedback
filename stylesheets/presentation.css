@@ -124,20 +124,21 @@ q:before
 
 code
 {
-  position:relative;
-  top:-3px;
-  left:0;
   border-radius:3px;
-  /*border:1px solid #ccc;*/
+  border:1px solid #ccc;
   background:#ddd;
   padding:0 4px;
   color:#444;
   font-family:'Droid Sans Mono',auto;
   font-size:14px;  
-  /*border-color:#333;
-  background:#444;
-  color:#ddd;*/
+}
+code.extrude
+{
+  position:relative;
+  top:-3px;
+  left:0;
   border:none;
+  
   background:linear-gradient(#ddd,#ccc);
   background-color:#444;
   text-shadow:0 1px 0 #999;
@@ -154,11 +155,15 @@ code
 
 code.ruby
 {
+  border-color:#dcc;
+  background:#edd;
+  color:#544;
+}
+
+code.ruby.extrude
+{
   border:none;
-  /*border-color:#e94f5f;*/
   background:linear-gradient(#e94f5f,#d93f4f);
-  color:#ecc;
-  /*background-color:#e94f5f;*/
   text-shadow:0 1px 0 #af101f;
   box-shadow:
   0 1px 0 #cf2f2f,
@@ -173,9 +178,13 @@ code.ruby
 
 code.bash
 {
-  /*border-color:#333;
+  border-color:#333;
   background:#444;
-  color:#ddd;*/
+  color:#ddd;
+}
+
+code.bash.extrude
+{
   border:none;
   background:linear-gradient(#444,#333);
   color:#ccc;
@@ -317,10 +326,6 @@ code.bash:before
   margin-bottom:12px;
 }
 
-.app-step h2
-{
-  display:none;
-}
 .app-step ol,
 .app-step ul
 {

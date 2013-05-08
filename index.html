@@ -25,7 +25,7 @@
             <li>Programming language</li>
             <li>Object-oriented</li>
             <li>Dynamic/duck typing</li>
-            <li>Package/library management via RubyGems</li>
+            <li>Package/library management via <strong>RubyGems</strong></li>
             <li>Many compiler implementations including JIT and pre-compiling</li>
             <li>
               Focused on programmer productivity and enjoyment:
@@ -50,6 +50,7 @@
             <li>ORM (ActiveRecord)</li>
             <li>Routing</li>
             <li>RESTful</li>
+            <li>Also awesome</li>
           </ul>
         </div>
       </div>
@@ -64,11 +65,12 @@
           <li>Fix funky output in the generated code</li>
           <li>Make it usable</li>
           <li>Tell us when we get feedback</li>
-          <li>Deploy it to Heroku</li>
+          <li>Deploy it to <strong>Heroku</strong></li>
         </ol>
       </div>
       <div id="application-architecture" class="step app-step">
         <!-- <h2>Application architecture (it ain't gonna plan itself)</h2> -->
+        <h3>Resources</h3>
         <ul>
           <li>User
             <ul>
@@ -88,13 +90,13 @@
         <!-- <h2>Lay the groundwork</h2> -->
         <ol>
           <!-- Install the Rails gem via RubyGems -->
-          <li>Install Rails gem via RubyGems:<br/><code class="bash">gem install rails</code></li>
+          <li>Install Rails gem via <strong>RubyGems</strong>:<br/><code class="bash extrude">gem install rails</code></li>
           <!-- Generate the Rails application boilerplate -->
-          <li>Generate a new Rails project:<br/><code class="bash">rails new .</code></li>
+          <li>Generate a new Rails project:<br/><code class="bash extrude">rails new .</code></li>
           <li>
             Add <code class="ruby">rails-haml</code> gem to our Gemfile and install it:<br/>
             <!-- Install any gems that weren't installed when we install Rails -->
-            <code class="bash">bundle install</code>
+            <code class="bash extrude">bundle install</code>
           </li>
         </ol>
       </div>
@@ -102,11 +104,11 @@
         <!-- <h2>Generate resources</h2> -->
         <ol start="4">
           <!-- Generate model, views, controller, tests, assets, migration and route for users -->
-          <li>Generate a RESTful resource for users:<br/><code class="bash">rails g scaffold User name:string email:string</code></li>
+          <li>Generate a RESTful resource for users:<br/><code class="bash extrude">rails g scaffold User name:string email:string</code></li>
           <!-- Generate model, views, controller, tests, assets, migration and route for submissions -->
-          <li>Generate a RESTful resource for feedback submissions:<br/><code class="bash">rails g scaffold Submission user:references body:text</code></li>
+          <li>Generate a RESTful resource for feedback submissions:<br/><code class="bash extrude">rails g scaffold Submission user:references body:text</code></li>
           <!-- Run the migrations to create the necessary tables in the database -->
-          <li>Migrate the database to build the necessary tables:<br/><code class="bash">rake db:migrate</code></li>
+          <li>Migrate the database to build the necessary tables:<br/><code class="bash extrude">rake db:migrate</code></li>
           <!-- Run the app! -->
         </ol>
       </div>
@@ -127,8 +129,8 @@
       <div id="implement-notifications" class="step app-step">
         <!-- <h2>Tell us when we get feedback</h2> -->
         <ol start="11">
-          <li>Configure ActionMailer for <code class="ruby">:development</code> group.</li>
-          <li>Generate an ActionMailer:<br/><code class="bash">rails g mailer SubmissionMailer</code></li>
+          <li>Configure ActionMailer defaults for <code class="ruby">:development</code> group.</li>
+          <li>Generate an ActionMailer:<br/><code class="bash extrude">rails g mailer SubmissionMailer</code></li>
           <li>Create submission notification method.</li>
           <li>Create submission notification view.</li>
           <li>Implement submission notification on <code>SubmissionController#create</code>.</li>
@@ -137,19 +139,24 @@
       <div id="deploy-it" class="step app-step">
         <!-- <h2>Deploy it to Heroku</h2> -->
         <ol start="16">
-          <li>Configure Heroku to use SendGrid to send our notifications and update <code class="ruby">:production</code> group config:<br/><code class="bash">heroku addons:add sendgrid:starter</code></li>
+          <li>Configure <strong>Heroku</strong> to use <strong>SendGrid</strong> to send our notifications and update <code class="ruby">:production</code> group ActionMailer defaults:<br/><code class="bash extrude">heroku addons:add sendgrid:starter</code></li>
           <li>Move <code class="ruby">sqlite3</code> gem to <code class="ruby">:development</code> group and add <code class="ruby">pg</code> (postgres) gem to the <code class="ruby">:production</code> group.</li>
-          <li>Update your <code>Gemfile.lock</code> file:<br/><code class="bash">bundle install</code></li>
-          <li>Create a new Heroku app:<br/><code class="bash">heroku apps:create tech-talks-feedback</code></li>
-          <li>Push your app to Heroku:<br/><code class="bash">git push heroku master</code></li>
-          <li>Run the database migrations:<br/><code class="bash">heroku run bundle exec rake db:migrate</code></li>
+          <li>Update your <code>Gemfile.lock</code> file:<br/><code class="bash extrude">bundle install</code></li>
+          <li>Create a new <strong>Heroku</strong> app:<br/><code class="bash extrude">heroku apps:create tech-talks-feedback</code></li>
+          <li>Push your app to <strong>Heroku</strong>:<br/><code class="bash extrude">git push heroku master</code></li>
+          <li>Run the database migrations:<br/><code class="bash extrude">heroku run bundle exec rake db:migrate</code></li>
         </ol>
       </div>
       <div id="thanks" class="step" data-z="5000">
         <h2>Thanks for participating!</h2>
-        <p>The source files for this project are available at <a href="https://github.com/chrislambe/tech-talk-rails">https://github.com/chrislambe/tech-talk-rails</a>. This presentation can be found at <a href="http://chrislambe.github.io/tech-talk-rails">http://chrislambe.github.io/tech-talk-rails</a>.</p>
+        <p>The source files for this project are available at <a href="https://github.com/chrislambe/tech-talk-rails">github.com/chrislambe/tech-talk-rails</a>. This presentation can be found at <a href="http://chrislambe.github.io/tech-talk-rails">chrislambe.github.io/tech-talk-rails</a>.</p>
         <p>This presentation was assembled with the magic of <a href="https://github.com/bartaz/impress.js">impress.js</a>. Nerd.</p>
-        <p>If you'd like you can send me any feedback you have via the app we just built! For the record it can be found at <a href="http://tech-talks-feedback.herokuapp.com/">http://tech-talks-feedback.herokuapp.com/</a></p>
+        <p>If you'd like you can send me any feedback via the app we just built! For the record it can be found at <a href="http://tech-talks-feedback.herokuapp.com/">tech-talks-feedback.herokuapp.com</a></p>
+        <h3>Additional resources:</h3>
+        <p><strong>RailsCasts:</strong> <a href="http://railscasts.com/">railscasts.com</a></p>
+        <p><strong>Rails Guides:</strong> <a href="http://guides.rubyonrails.org/">guides.rubyonrails.org</a></p>
+        <p><strong>Rails API:</strong> <a href="http://api.rubyonrails.org/">api.rubyonrails.org</a></p>
+        <p><strong>Eloquent Ruby:</strong> <a href="http://www.amazon.com/Eloquent-Ruby-Addison-Wesley-Professional/dp/0321584104">amazon.com/Eloquent-Ruby-Addison-Wesley-Professional/dp/0321584104</a></p>
       </div>
     </div>
     <ol id="app-steps">
@@ -159,7 +166,7 @@
       <li class="fix-output"><a href="#fix-output">Fix funky output in the generated code</a></li>
       <li class="make-it-usable"><a href="#make-it-usable">Make it usable</a></li>
       <li class="implement-notifications"><a href="#implement-notifications">Tell us when we get feedback</a></li>
-      <li class="deploy-it"><a href="#deploy-it">Deploy it to Heroku</a></li>
+      <li class="deploy-it"><a href="#deploy-it">Deploy it to <strong>Heroku</strong></a></li>
     </ol>
     <script src="javascripts/impress.js"></script>
     <script src="javascripts/jquery-2.0.0.min.js"></script>
