@@ -1,6 +1,7 @@
 (function($,undefined) {
   var typeMeElements = new Array();
   var typeCursor = null;
+  var introTimeout = null;
 
   $(function() {
     $('.app-step').each(function(i,element) {
@@ -19,9 +20,24 @@
 
     typeMeElements = $.makeArray($('.type-me'));
     $(typeMeElements[0]).before(typeCursor);
-    // setTimeout(typeMe,1000,firstElement);
 
-    $('body').one('click',function(e) {typeMe(typeMeElements.shift());});
+    var introDelay = 2000;
+    introTimeout = setTimeout(function() {
+      // If we let the timeout fire, we don't need the click
+      $('body').off('click');
+      typeMe(typeMeElements.shift());
+    },introDelay);
+    $('#timer-display').animate({width:'0%'},introDelay,'linear');
+
+    // First click kills the auto-type timer
+    $('body').one('click',function(e) {
+      clearTimeout(introTimeout);
+      $('#timer-display').stop().fadeOut('fast');
+      // Second click runs the intro animation
+      $('body').one('click',function(e) {
+        typeMe(typeMeElements.shift());
+      });
+    });
   });
 
   var typeMe = function(element)
