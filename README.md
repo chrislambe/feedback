@@ -28,7 +28,7 @@ These instructions may not be 100% correct since RVM is constantly changing. Fol
 1. Create a directory for the application. I used `~/Documents/Tech Talks/Ruby on Rails/feedback`.
 2. Create an [RVM gemset][rvm-gemsets] and [.rvmrc][rvm-rvmrc] file in the project directory: 
   1. `cd ~/Documents/Tech\ Talks/Ruby\ on\ Rails/feedback`
-  2. `rvm --rvmrc --create use 2.0.0@tech-tail-rails`
+  2. `rvm --rvmrc --create use 2.0.0@tech-talk-rails`
 
 ### You should be good to go!
 Enjoy the delight that is creating a Ruby on Rails application.
