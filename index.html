@@ -28,11 +28,13 @@
             <li>Dynamic/duck typing</li>
             <li>Package/library management via <strong>RubyGems</strong></li>
             <li>Many compiler implementations including JIT and pre-compiling</li>
+            <li>IRB, a REPL for Ruby</li>
             <li>
               Focused on programmer productivity and enjoyment:
               <q cite="http://en.wikipedia.org/wiki/Ruby_(programming_language)#Philosophy">...we need to focus on humans, on how humans care about doing programming or operating the application of the machines. We are the masters. [Machines] are the slaves.</q>
               <p style="text-align:right;font-weight:700;">Yukihiro "Matz" Matsumoto, creator of Ruby</p>
             </li>
+            <li>Open source</li>
             <li>Awesome</li>
           </ul>
         </div>
@@ -51,6 +53,8 @@
             <li>ORM (ActiveRecord)</li>
             <li>Routing</li>
             <li>RESTful</li>
+            <li>Massive developer community (if you want to do a thing, there's probably a gem for it)</li>
+            <li>Open source</li>
             <li>Also awesome</li>
           </ul>
         </div>
@@ -91,7 +95,7 @@
         <!-- <h2>Lay the groundwork</h2> -->
         <ol>
           <!-- Install the Rails gem via RubyGems -->
-          <li>Install Rails gem via <strong>RubyGems</strong>:<br/><code class="bash extrude">gem install rails</code></li>
+          <li>Install Rails gem via <strong>RubyGems</strong>:<br/><code class="bash extrude">gem install rails --no-ri --no-rdoc</code></li>
           <!-- Generate the Rails application boilerplate -->
           <li>Generate a new Rails project:<br/><code class="bash extrude">rails new .</code></li>
           <li>
@@ -140,10 +144,10 @@
       <div id="deploy-it" class="step app-step">
         <!-- <h2>Deploy it to Heroku</h2> -->
         <ol start="16">
-          <li>Configure <strong>Heroku</strong> to use <strong>SendGrid</strong> to send our notifications and update <code class="ruby">:production</code> group ActionMailer defaults:<br/><code class="bash extrude">heroku addons:add sendgrid:starter</code></li>
           <li>Move <code class="ruby">sqlite3</code> gem to <code class="ruby">:development</code> group and add <code class="ruby">pg</code> (postgres) gem to the <code class="ruby">:production</code> group.</li>
           <li>Update your <code>Gemfile.lock</code> file:<br/><code class="bash extrude">bundle install</code></li>
           <li>Create a new <strong>Heroku</strong> app:<br/><code class="bash extrude">heroku apps:create tech-talks-feedback</code></li>
+          <li>Configure <strong>Heroku</strong> to use <strong>SendGrid</strong> to send our notifications and update <code class="ruby">:production</code> group ActionMailer defaults:<br/><code class="bash extrude">heroku addons:add sendgrid:starter</code></li>
           <li>Push your app to <strong>Heroku</strong>:<br/><code class="bash extrude">git push heroku master</code></li>
           <li>Run the database migrations:<br/><code class="bash extrude">heroku run bundle exec rake db:migrate</code></li>
         </ol>
